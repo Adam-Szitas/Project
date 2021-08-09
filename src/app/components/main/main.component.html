@@ -17,9 +17,24 @@
         </div>
 
         <div class="auth">
-            <app-authentication *ngIf="!continue" (continue)="toggleAuth($event)"></app-authentication>
-            <app-register *ngIf="continue"></app-register>
+            <div class="container">
+                <div class="codinglogo">
+                    <img src="../../../assets/icons/Code@1x.png" alt="codeLogo">
+                </div>
+                <div class="form-element">
+                    <div class="redbrown">
+                        <a>Welcome to testing assigment at ZENTITY</a>
+                    </div>
+                    <div class="buttons">
+                        <div class="inner">
+                            <button class="next" (click)="goToAuth()"><a>Start</a><div class="icon next"></div></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+
 
     </div>
 

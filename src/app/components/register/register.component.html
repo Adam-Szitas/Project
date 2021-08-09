@@ -1,21 +1,64 @@
 <div class="form container">
-    <div class="can-active" *ngIf="true">
+    <div class="can-active">
         <div class="icon">
             <div class="userLogo">
-                <img src="../../../assets/icons/User@1x.png" alt="userLogo">
+                <img [src]="logoSource" alt="userLogo">
             </div>
         </div>
         <div class="">
             <div class="redbrown">
-                <a>Welcome to testing assigment at ZENTITY</a>
+                <a>{{ textSource }}</a>
             </div>
         </div>
-        <form (submit)="submitUserName()">
-            <input type="text">
+        <form [formGroup]="registerForm" (submit)="submitUser()">
+            <div class="uName" *ngIf="which === 'username'">
+                <input class="{{ registerForm.controls['userName'].invalid && (registerForm.controls['userName'].dirty || registerForm.controls['userName'].touched) ? 'error-input input' : 'input' }}" type="text" formControlName="userName" placeholder="Here, please!">
+                <div *ngIf="registerForm.controls['userName'].invalid && (registerForm.controls['userName'].dirty || registerForm.controls['userName'].touched)" class="alert alert-danger">
+                    <div class="error-list" *ngIf="registerForm.controls['userName'].errors?.required">
+                        Name is required.
+                    </div>
+                    <div class="error-list" *ngIf="registerForm.controls['userName'].errors?.minlength">
+                        Name must be at least 3 and maximum 20 characters long.
+                    </div>
+                    <div class="error-list" *ngIf="registerForm.controls['userName'].errors?.pattern">
+                        pattern errror
+                    </div>
+                </div>
+            </div>
+            <div class="password" *ngIf="which === 'password'">
+                <input class="input" type="{{ password.value ? 'password' : 'text' }}" formControlName="passWord" placeholder="Make it strong!" #password>
+                <div *ngIf="
+                registerForm.controls['passWord'].invalid &&
+                (registerForm.controls['passWord'].dirty ||
+                registerForm.controls['passWord'].touched)
+                " class="alert alert-danger">
+                    <div class="error-list" *ngIf="registerForm.controls['passWord'].errors?.required">
+                        Password is required.
+                    </div>
+                    <div class="error-list" *ngIf="registerForm.controls['passWord'].errors?.minlength">
+                        Password must be at least 9 characters long.
+                    </div>
+                </div>
+                <input class="input" type="{{ confirm.value ? 'password' : 'text' }}" formControlName="confirm" placeholder="And once again..." #confirm>
+                <div *ngIf="
+                registerForm.controls['confirm'].invalid &&
+                (registerForm.controls['confirm'].dirty ||
+                registerForm.controls['confirm'].touched)
+                " class="alert alert-danger">
+                    <div class="error-list" *ngIf="registerForm.controls['confirm'].errors?.required">
+                        Confirmation is required.
+                    </div>
+                </div>
+            </div>
 
             <div class="buttons">
                 <div class="inner">
-                    <button class="next"><a>Continue</a><div class="icon next"></div></button>
+                    <button type="submit" class="next" [disabled]="
+                      (registerForm.controls['userName'].invalid &&
+                      (registerForm.controls['userName'].dirty ||
+                      registerForm.controls['userName'].touched) ||
+                      registerForm.controls['userName'].value == '')
+                      "><a>Continue</a><div class="icon next"></div></button>
                 </div>
             </div>
         </form>

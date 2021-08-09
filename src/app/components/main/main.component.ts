@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -10,17 +11,17 @@ export class MainComponent implements OnInit {
   continue: boolean = false;
 
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.continue = true;
 
   }
 
-  toggleAuth(event:string){
-    if(event == 'continue'){
-      this.continue = true;
-    }
+  goToAuth(){
+    this.router.navigate(['authentication']);
   }
 
 }

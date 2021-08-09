@@ -8,6 +8,9 @@ import { EventEmitter } from '@angular/core';
 })
 export class AuthenticationComponent implements OnInit {
   @Output() continue = new EventEmitter();
+
+  showBack:boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

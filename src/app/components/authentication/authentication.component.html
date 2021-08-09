@@ -1,15 +1,25 @@
-<div class="container">
-    <div class="codinglogo">
-        <img src="../../../assets/icons/Code@1x.png" alt="codeLogo">
-    </div>
-    <div class="form-element">
-        <div class="redbrown">
-            <a>Welcome to testing assigment at ZENTITY</a>
-        </div>
-        <div class="buttons">
-            <div class="inner">
-                <button class="next" (click)="Continue()"><a>Start</a><div class="icon next"></div></button>
+<body>
+    <div class="body">
+
+        <div class="header">
+            <button class="back left" *ngIf="showBack">
+                <img src="../../../assets/icons/next_white@1x.png" alt="back" class="mirrored mg-left-20x">
+            </button>
+            <div class="center logo-2">
+
+            </div>
+            <div class="forth right">
+
             </div>
         </div>
+        <div class="info center">
+            <a class="center name white">John Cena</a>
+        </div>
+
+        <div class="auth">
+            <app-register (which)="showBack"></app-register>
+        </div>
+
     </div>
-</div>
+
+</body>

@@ -6,17 +6,21 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ControlComponent } from './components/control/control.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     AuthenticationComponent,
-    RegisterComponent
+    RegisterComponent,
+    ControlComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
