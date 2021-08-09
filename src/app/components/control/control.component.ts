@@ -26,6 +26,8 @@ export class ControlComponent implements OnInit {
     )
   }
 
+  logos: any[] = [];
+
   fullName: string = ''
   userName: string = ''
   address: string = ''
@@ -34,23 +36,6 @@ export class ControlComponent implements OnInit {
   mail: string = ''
   phone: string = ''
   socialMedia: string = ''
-
-
-  ngOnInit(): void {
-  //  if(this.data.user.displayName != localStorage.getItem('userName'))
-  //  this.route.navigate(['']);
-
-
-   this.fullName = this.data.user.name + this.data.user.surname;
-   this.userName = this.data.user.displayName;
-   this.address = this.data.user.contact.locations[0].address.addressString;
-   this.city = this.data.user.contact.locations[0].address.city;
-   this.postalCode = this.data.user.contact.locations[0].address.postalCode;
-   this.mail = this.data.user.contact.email;
-   this.phone = this.data.user.contact.phoneNumber;
-   this.socialMedia = this.data.user.contact.socialNetworks[0].name;
-
-  }
 
   updateGroup = new FormGroup({
     name: new FormControl(this.fullName, [
@@ -79,6 +64,29 @@ export class ControlComponent implements OnInit {
       Validators.required
     ])
   })
+
+
+  ngOnInit(): void {
+  //  if(this.data.user.displayName != localStorage.getItem('userName'))
+  //  this.route.navigate(['']);
+
+
+  this.updateGroup.setValue({
+    name: this.data.user.name + this.data.user.surname,
+    username: this.data.user.displayName,
+    address: this.data.user.contact.locations[0].address.addressString,
+    city: this.data.user.contact.locations[0].address.city,
+    postalCode: this.data.user.contact.locations[0].address.postalCode,
+    mail: this.data.user.contact.email,
+    phone: this.data.user.contact.phoneNumber,
+    socialMedia: this.data.user.contact.socialNetworks[0].name
+  });
+
+  this.logos = this.data.user.contact.socialNetworks;
+
+  }
+
+
 
 
 

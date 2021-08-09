@@ -32,7 +32,6 @@ div {
         height: 100%;
         width: 100%;
         max-width: 900px;
-        border: 1px solid rgba(200, 200, 200, 0.3);
         margin: 0 auto;
         & .info>a {
             font-weight: bold;
@@ -70,6 +69,9 @@ div {
         background-position: center;
         width: 80%;
         height: 100%;
+    }
+    & .logos {
+        margin-left: 20px;
     }
 }
 
@@ -168,7 +170,7 @@ div.buttons {
 div.input-box {
     display: block;
     width: 100%;
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
     & label {
         position: absolute;
@@ -184,6 +186,8 @@ div.input-box {
         font-size: 18px;
         line-height: 24px;
         color: $darkblue;
+        padding-left: 0;
+        border: 0;
     }
     & div {
         display: inline;
@@ -196,6 +200,7 @@ div.input-box {
             justify-content: space-between;
             align-items: center;
             right: 0;
+            margin-right: 15px;
             margin-top: -3vh;
             width: 20%;
             & a {

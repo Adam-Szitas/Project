@@ -20,7 +20,7 @@
                 <div class="input-box">
                     <div>
                         <label for="name">Name</label>
-                        <input type="text" formControlName="name" [value]="fullName" [placeholder]="fullName">
+                        <input type="text" formControlName="name" [placeholder]="fullName">
                     </div>
                     <div class="little_buttons">
                         <div class="for-a">
@@ -110,6 +110,9 @@
                             <a>Edit</a>
                         </div>
                     </div>
+                </div>
+                <div class="logos">
+                    <a *ngFor="let this$ of logos" href="{{ this$.url }}"><img src="{{ this$.id == 'linkedIn' ? '../../../assets/icons/LinkedIn@1x.png' : '../../../assets/icons/Twitter@1x.png' }}" alt="{{ this$.name }}"></a>
                 </div>
             </form>
         </div>
