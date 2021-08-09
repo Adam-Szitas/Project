@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'authentication', component: AuthenticationComponent
   },
   {
-    path: 'loggedin/:data', component: ControlComponent
+    path: 'loggedin', component: ControlComponent
   }
 ];
 

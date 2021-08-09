@@ -8,6 +8,8 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { RegisterComponent } from './components/register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ControlComponent } from './components/control/control.component';
+import { StoreModule } from '@ngrx/store';
+import { counterReducer } from './components/reducers/cena.reducer';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { ControlComponent } from './components/control/control.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    StoreModule.forRoot({
+      cena: counterReducer
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

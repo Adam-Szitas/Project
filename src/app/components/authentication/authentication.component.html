@@ -2,7 +2,7 @@
     <div class="body">
 
         <div class="header">
-            <button class="back left" *ngIf="showBack">
+            <button class="back left" *ngIf="back">
                 <img src="../../../assets/icons/next_white@1x.png" alt="back" class="mirrored mg-left-20x">
             </button>
             <div class="center logo-2">
@@ -17,7 +17,7 @@
         </div>
 
         <div class="auth">
-            <app-register (which)="showBack"></app-register>
+            <app-register (showBack)="showBack($event)"></app-register>
         </div>
 
     </div>

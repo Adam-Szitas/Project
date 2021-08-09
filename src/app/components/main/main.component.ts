@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
 })
 export class MainComponent implements OnInit {
 
-  continue: boolean = false;
 
 
   constructor(
@@ -16,7 +15,6 @@ export class MainComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.continue = true;
 
   }
 

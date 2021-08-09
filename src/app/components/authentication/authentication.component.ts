@@ -7,17 +7,16 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./authentication.component.scss']
 })
 export class AuthenticationComponent implements OnInit {
-  @Output() continue = new EventEmitter();
 
-  showBack:boolean = false;
+  back:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  Continue(){
-    this.continue.emit('continue');
+  showBack(event: any){
+    this.back = event;
   }
 
 }
