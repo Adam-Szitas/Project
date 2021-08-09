@@ -9,7 +9,7 @@ export class UpdateProfile implements ActionParent{
 
   type = 'update';
   constructor(
-    public payload: any
+    public payload: Object
   ){
 
   }

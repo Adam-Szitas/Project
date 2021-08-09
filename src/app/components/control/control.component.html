@@ -20,7 +20,7 @@
                 <div class="input-box">
                     <div>
                         <label for="name">Name</label>
-                        <input type="text" formControlName="name" [placeholder]="fullName">
+                        <input type="text" formControlName="name" [placeholder]="fullName" (change)="updateProfile()">
                     </div>
                     <div class="little_buttons">
                         <div class="for-a">
@@ -121,7 +121,7 @@
                 <div class="form-element">
                     <div class="buttons">
                         <div class="inner">
-                            <button class="next"><a>Logout</a><div class="icon next"></div></button>
+                            <button class="next" (click)="logout()"><a>Logout</a><div class="icon next"></div></button>
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { UpdateProfile } from 'src/app/actions/cena.action';
 import { User } from 'src/app/models/user.model';
 
 @Component({
@@ -20,8 +21,7 @@ export class ControlComponent implements OnInit {
   ) {
     store.pipe(select('cena')).subscribe(
       (values: any) => {
-        console.log(values[0].default);
-        this.data = values[0].default;
+        this.data = values[values.length - 1].default;
       }
     )
   }
@@ -67,8 +67,8 @@ export class ControlComponent implements OnInit {
 
 
   ngOnInit(): void {
-  //  if(this.data.user.displayName != localStorage.getItem('userName'))
-  //  this.route.navigate(['']);
+   if(this.data.user.displayName != localStorage.getItem('userName'))
+   this.route.navigate(['']);
 
 
   this.updateGroup.setValue({
@@ -86,8 +86,15 @@ export class ControlComponent implements OnInit {
 
   }
 
+  logout(){
+    localStorage.removeItem('userName');
+    this.route.navigate(['']);
+  }
 
-
+  updateProfile(){
+    let profileData = this.updateGroup.getRawValue();
+    this.store.dispatch(new UpdateProfile({user: profileData}))   //here is missing some knowledge
+  }
 
 
 

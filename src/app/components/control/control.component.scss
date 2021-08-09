@@ -188,6 +188,11 @@ div.input-box {
         color: $darkblue;
         padding-left: 0;
         border: 0;
+        &:focus,
+        &:active {
+            border: 2px solid $glowing;
+            padding: 20px;
+        }
     }
     & div {
         display: inline;
