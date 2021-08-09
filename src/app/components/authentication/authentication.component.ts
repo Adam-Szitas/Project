@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-authentication',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./authentication.component.scss']
 })
 export class AuthenticationComponent implements OnInit {
-
+  @Output() continue = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  Continue(){
+    this.continue.emit('continue');
   }
 
 }

@@ -7,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  continue: boolean = false;
+
+
   constructor() { }
 
   ngOnInit(): void {
+    this.continue = true;
 
+  }
+
+  toggleAuth(event:string){
+    if(event == 'continue'){
+      this.continue = true;
+    }
   }
 
 }

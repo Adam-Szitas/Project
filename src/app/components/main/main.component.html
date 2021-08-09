@@ -17,8 +17,10 @@
         </div>
 
         <div class="auth">
-            <app-authentication></app-authentication>
+            <app-authentication *ngIf="!continue" (continue)="toggleAuth($event)"></app-authentication>
+            <app-register *ngIf="continue"></app-register>
         </div>
+
     </div>
 
 </body>
