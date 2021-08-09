@@ -86,6 +86,7 @@ export class RegisterComponent implements OnInit {
         this.registerForm.controls['userName'].value == this.realUserName &&
         this.registerForm.controls['passWord'].value == this.realPassword
       ){
+        localStorage.setItem('userName',this.realUserName);
         let data = this.registerForm.getRawValue();
         this.router.navigate(['/loggedin']);
       }else{

@@ -1,1 +1,40 @@
-<h1>hi, i am the control panel, you are logged in</h1>
+<body>
+    <div class="body">
+
+        <div class="header">
+            <div class="back left">
+
+            </div>
+            <div class="center logo-2">
+
+            </div>
+            <div class="forth right">
+
+            </div>
+        </div>
+        <div class="info center">
+            <a class="center name">Edit your profile</a>
+        </div>
+        <div class="form-group">
+            <form [formGroup]="updateGroup">
+                <label for="name">Name</label>
+                <input type="text" formControlName="name">
+            </form>
+        </div>
+        <div class="auth">
+            <div class="container">
+                <div class="form-element">
+                    <div class="buttons">
+                        <div class="inner">
+                            <button class="next"><a>Logout</a><div class="icon next"></div></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
