@@ -1,4 +1,4 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 body {
     background-color: $darkblue;
     width: 100%;
@@ -51,6 +51,7 @@ div {
     }
     &.auth {
         margin: 15%;
+        height: 65%;
     }
 }
 

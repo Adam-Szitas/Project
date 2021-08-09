@@ -1,11 +1,68 @@
-@import url(../../styles/colors.scss);
+@import '../../styles/colors.scss';
 * {
     color: white;
 }
 
 div.container {
-    border: 1px solid white;
     padding: 10px;
+    height: 100%;
+    & .form-element,
+    & .form-element form {
+        height: 100%;
+    }
+    & .buttons {
+        position: relative;
+        width: 100%;
+        height: 75%;
+        & .inner {
+            height: 100%;
+            width: 50%;
+            background-color: inherit;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            align-self: flex-end;
+            flex-wrap: nowrap;
+            justify-content: center;
+            &>button {
+                position: absolute;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                justify-content: space-between;
+                align-content: flex-end;
+                bottom: 0;
+                background-color: inherit;
+                padding: 20px;
+                border: 1px solid white;
+                width: 50%;
+                & a {
+                    font-size: 18px;
+                    line-height: 24px;
+                    font-weight: 600;
+                }
+                & div.icon {
+                    width: 50px;
+                    height: 30px;
+                    background-image: url('../../../assets/icons/next_white@1x.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-attachment: inherit;
+                    background-origin: content-box;
+                }
+                &:hover,
+                &:hover * {
+                    cursor: pointer;
+                    background-color: white;
+                    color: $redbrown;
+                }
+                &:hover div.icon {
+                    background-image: url('../../../assets/icons/Next@1x.png');
+                }
+            }
+        }
+    }
 }
 
 div.container,
@@ -15,4 +72,13 @@ div.container * {
     align-items: center;
     align-self: center;
     text-align: center;
+}
+
+.redbrown * {
+    color: $redbrown;
+}
+
+.redbrown a {
+    font-size: 18px;
+    line-height: 24px;
 }
